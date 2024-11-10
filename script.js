@@ -7,10 +7,10 @@ document.addEventListener("DOMContentLoaded", function() {
         card.classList.toggle('flipped');
         
         if (card.classList.contains('flipped')) {
-            topText.textContent = "Check Out the Back!";
+            topText.textContent = "Oh!! It's the Queen of all hearts \u2764\uFE0F\u2764\uFE0F !!!";
             bottomText.style.display = "block"; // Show bottom text
         } else {
-            topText.textContent = "Welcome to the Card Flip!";
+            topText.textContent = "There is a card on the screen. I wonder who's behind it...?";
             bottomText.style.display = "none"; // Hide bottom text
         }
     });
