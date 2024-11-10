@@ -1,76 +1,112 @@
-/* Global Styles */
-
+/* Animated Background */
 body, html {
     height: 100%;
-    margin: 0;
-    display: flex;
+    /* display: flex; */
+    /* flex-direction: column; Stack content vertically */
     justify-content: center;
     align-items: center;
-    background-color: #f7f7f7; /* Light Gray Background */
+    background: linear-gradient(120deg, #FF6B6B, #FFD93D, #6BCB77, #4D96FF, #9A7DFF);
+    background-size: 150% 150%;
+    animation: gradientAnimation 10s ease infinite;
 }
 
-/* Container Styles */
-
-.container {
-    perspective: 1000px; /* Add perspective to the container */
+/* Gradient Animation */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
-.card-container {
-    cursor: pointer;
-}
-
-/* Card Styles */
-
-.card {
-    position: relative;
-    width: 293px; /* Updated Width */
-    height: 439px; /* Updated Height */
-    text-align: center;
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
-    border-radius: 13.23px; /* Curve around the edges */
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-}
-
-/* Front and Back Styles */
-
-.front,.back {
-    position: absolute;
+/* Wrapper to ensure flex spreads across the whole page */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 100%;
-    -webkit-backface-visibility: hidden; /* Safari */
-    backface-visibility: hidden;
+}
+
+/* Other Styles (Card and Text) */
+.text {
+    font-family: 'Sour Gummy', sans-serif;
+    font-size: 55px;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0;
+    color: rgb(142, 59, 142); /* Make text stand out against the animated background */
+}
+
+#topText {
+    margin-bottom: 20px;
+}
+
+#bottomText {
+    margin-top: 20px;
+    display: none;
+}
+
+.container {
+    perspective: 1000px;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.card-container {
+    position: relative;
+    width: 293px;
+    height: 439px;
+    cursor: pointer;
+    background: inherit; /* Inherit the background gradient from body */
+    background-size: inherit;
+    animation: inherit;
+}
+
+.card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    transform-origin: center;
+    border-radius: 13.23px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    background: inherit; /* Set card's interior to white or any solid color */
+}
+
+.front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
     justify-content: center;
-    border-radius: 13.23px; /* Inherit curve */
+    border-radius: 13.23px;
 }
 
 .front {
-    background-color: #87CEEB; /* Sky Blue */
-    /* Background Image will be contained within these dimensions */
+    background-color: transparent;
 }
 
 .back {
-    background-color: #FFC080; /* Light Coral */
-    transform: rotateY(180deg); /* Flip the back side */
-    /* Background Image will be contained within these dimensions */
+    background-color: transparent;
+    transform: rotateY(180deg);
 }
 
 .flipped {
     transform: rotateY(180deg);
 }
 
-/* Image Containment Styles */
-
 .card-image {
-    max-width: 100%; /* Ensure the image doesn't exceed the card's width */
-    max-height: 100%; /* Ensure the image doesn't exceed the card's height */
-    width: auto; /* Maintain the image's original width, scaled down if necessary */
-    height: auto; /* Maintain the image's original height, scaled down if necessary */
-    margin: auto; /* Center the image horizontally and vertically */
-    display: block; /* Ensure proper margins */
-    border-radius: inherit; /* Maintain the curved corners, if desired */
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    margin: auto;
+    display: block;
+    border-radius: inherit;
 }
-

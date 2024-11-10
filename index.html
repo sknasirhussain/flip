@@ -4,26 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flippable Card with Dynamic Text</title>
+    
+    <!-- Link to Google Fonts: Alkatra and Sour Gummy -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alkatra&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <!-- Link to the CSS file -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- <div class="text" id="topText">Welcome to the Card Flip!</div> -->
-    
-    <div class="container">
-        <div class="card-container">
-            <div class="card" id="card">
-                <div class="front">
-                    <img src="images/front_image.png" alt="Front Image" class="card-image">
-                </div>
-                <div class="back">
-                    <img src="images/back_image.png" alt="Back Image" class="card-image">
+    <!-- Wrapper for centering content -->
+    <div class="wrapper">
+        <div class="text" id="topText">Welcome to the Card Flip!</div>
+        
+        <div class="container">
+            <div class="card-container">
+                <div class="card" id="card">
+                    <div class="front">
+                        <img src="images/front_image.png" alt="Front Image" class="card-image">
+                    </div>
+                    <div class="back">
+                        <img src="images/back_image.png" alt="Back Image" class="card-image">
+                    </div>
                 </div>
             </div>
         </div>
+        
+        <div class="text hidden" id="bottomText">Enjoy the Other Side!</div>
     </div>
     
-    <!-- <div class="text hidden" id="bottomText">Enjoy the Other Side!</div> -->
-    
+    <!-- JavaScript for the card flip functionality -->
     <script src="script.js"></script>
 </body>
 </html>
